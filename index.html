@@ -1,9 +1,17 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
+
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="JDP SUPREME APP">
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192x192.png">
+    <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
     <title>JDP SUPREME APP</title>
     <style>
         body, html { margin: 0; padding: 0; background: #000; height: 100%; overflow: hidden; }
@@ -241,5 +249,10 @@
             if(hist.length > 1) { hist.pop(); irPara(hist[hist.length-1]); }
         }
         function viajarInicio() { hist = [1]; irPara(1); }
+
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js').then(() => console.log("Nave pronta!"));
+            }
     </script>
-</body></html>
+</body>
+    </html>
